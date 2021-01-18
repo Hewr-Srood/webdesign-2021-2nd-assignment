@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Contact</title>
+    <link rel="stylesheet" href="fontawesome/css/all.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img
+            src="./assets/bootstrap-5-1.svg"
+            alt=""
+            width="50"
+            height="50"
+            class="me-3"
+          />
+          Contact Manager</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                ><i class="fa fa-address-book me-1" aria-hidden="true"></i
+                >Contacts</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="fa fa-user-circle me-1" aria-hidden="true"></i>
+                Username
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fas fa-cog me-1"></i>Account</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-sign-out-alt me-1"></i> Logout</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Add contact  -->
+    <section>
+      <div class="container text-end">
+        <button
+          type="button"
+          class="btn btn-primary my-3"
+          data-bs-toggle="modal"
+          data-bs-target="#modal3"
+        >
+          <i class="fa fa-plus me-1" aria-hidden="true"></i>Add Contact
+        </button>
+      </div>
+    </section>
+    <section id="posts">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="">
+              <table class="table table-striped border border-black">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>ahmad</td>
+                    <td>07508401999</td>
+                    <td>ahmad@email.com</td>
+                    <td>
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal3"
+                      >
+                        <i class="fas fa-edit"></i>
+                      </button>
+
+                      <button class="btn btn-danger">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- modal -->
+    <div class="modal fade" id="modal3">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Contact</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group mb-2">
+                <label for="">Contact Name</label>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="form-group mb-2">
+                <label for="">Phone no.</label>
+                <input type="tel" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="">Emial</label>
+                <input type="email" class="form-control" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary">Close</button>
+
+            <button class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/bootstrap.js"></script>
+    <script src="fontawesome/js/all.js"></script>
+  </body>
+</html>
