@@ -58,52 +58,57 @@
     <section>
       <div class="container">
         <div class="m-auto inputs">
-          <div class="mt-3 mb-2 border border-black border-2 rounded">
-            <label
-              for="exampleFormControlInput1"
-              class="m-2 form-label text-secondary"
-              >Email address</label
-            >
-            <input
-              type="email"
-              class="form-control border-0"
-              id="exampleFormControlInput1"
-              placeholder=""
-            />
-          </div>
-          <p class="text-secondary">
-            We'll never share your email with anyone else.
-          </p>
-          <div class="mb-3 border border-black border-2 rounded">
-            <label
-              for="exampleFormControlInput1"
-              class="m-2 form-label text-secondary"
-              >Password</label
-            >
-            <input
-              type="password"
-              class="form-control border-0"
-              id="exampleFormControlInput1"
-              placeholder=""
-              style="outline: 0px"
-            />
-          </div>
-          <div class="mb-3">
-            <div class="form-check">
+          <form action="users.html" method="get">
+            <div class="mt-3 mb-2 border border-black border-2 rounded">
+              <label
+                for="exampleFormControlInput"
+                class="m-2 form-label text-secondary"
+                >Email address</label
+              >
               <input
-                class="form-check-input"
-                type="checkbox"
-                id="FieldsetCheck"
+                type="email"
+                class="form-control border-0"
+                id="exampleFormControlInput"
+                placeholder=""
+                required
               />
-              <label class="form-check-label" for="FieldsetCheck">
-                Check me out
-              </label>
             </div>
-          </div>
-          <button type="submit" class="btn btn-primary w-100">Login</button>
+            <p class="text-secondary">
+              We'll never share your email with anyone else.
+            </p>
+            <div class="mb-3 border border-black border-2 rounded">
+              <label
+                for="exampleFormControlInput1"
+                class="m-2 form-label text-secondary"
+                >Password</label
+              >
+              <input
+                type="password"
+                class="form-control border-0"
+                id="exampleFormControlInput1"
+                placeholder=""
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="FieldsetCheck"
+                  required
+                />
+                <label class="form-check-label" for="FieldsetCheck">
+                  Check me out
+                </label>
+              </div>
+            </div>
+            <input type="submit" class="btn btn-primary w-100" value="Login" />
+          </form>
         </div>
       </div>
     </section>
     <script src="js/bootstrap.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
