@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+body {
+  height: 100vh;
+  max-height: 100vh;
+}
+
+footer nav a {
+  transition: color 500ms ease;
+}
+footer nav a:hover {
+  color: a;
+}
