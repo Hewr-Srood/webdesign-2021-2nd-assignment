@@ -70,7 +70,7 @@
     <section>
       <div class="container">
         <div class="m-auto inputs">
-          <form action="users.html" method="get">
+          <form id="login-form">
             <div class="mt-3 mb-2 border border-black border-2 rounded">
               <label
                 for="exampleFormControlInput"
@@ -115,7 +115,14 @@
                 </label>
               </div>
             </div>
-            <input type="submit" class="btn btn-primary w-100" value="Login" />
+            <button
+              id="login-submit"
+              type="submit"
+              class="btn btn-primary w-100"
+              value="Login"
+            >
+              Login
+            </button>
           </form>
         </div>
       </div>
@@ -130,6 +137,6 @@
       integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
       crossorigin="anonymous"
     ></script>
-    <script src="script.js"></script>
+    <script src="./js/login.js"></script>
   </body>
 </html>
