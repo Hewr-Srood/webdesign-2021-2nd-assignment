@@ -2,7 +2,6 @@ const loginForm = document.getElementById('login-form');
 const logged = localStorage.getItem('loggedUser');
 const init = () => {
   logged ? location.assign('users.html') : '';
-  renderUsers();
 };
 
 loginForm.addEventListener('submit', () => {
