@@ -1,6 +1,5 @@
 const tableBody = document.getElementById("table-body");
 let id = 1;
-
 const count = () => {
   for (let i = 0; i <= id; i++) {
     id++;
