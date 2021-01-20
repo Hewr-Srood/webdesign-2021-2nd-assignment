@@ -19,3 +19,9 @@ label:focus,
     width: 50%;
   }
 }
+button {
+  z-index: 2;
+}
+button i {
+  z-index: 1;
+}
