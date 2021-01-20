@@ -6,6 +6,8 @@ const userEmail = document.getElementById('user-email');
 const modalForm = document.getElementById('modal-form');
 const saveBtn = document.getElementById('save-modal');
 const addUserBtn = document.getElementById('add-contact-btn');
+const modalHeadertext = document.getElementById('modal-header-text');
+const closeBtn = document.getElementById('x-btn-close');
 let editBtns, deleteBtns;
 
 // users
@@ -63,19 +65,23 @@ const editData = (e) => {
         user.phone = userPhone.value;
         user.email = userEmail.value;
         renderUsers();
+        closeBtn.click();
       };
     }
   });
 };
 const deleteData = (e) => {
-  let name = e.target.closest('tr').children[1].innerText;
-  let email = e.target.closest('tr').children[3].innerText;
-  users.map((user, i) => {
-    if (user.email == email && user.name == name) {
-      users.splice(i, 1);
-    }
-  });
-  renderUsers();
+  const wantsToPlayAgain = confirm('are you sure?');
+  if (wantsToPlayAgain) {
+    let name = e.target.closest('tr').children[1].innerText;
+    let email = e.target.closest('tr').children[3].innerText;
+    users.map((user, i) => {
+      if (user.email == email && user.name == name) {
+        users.splice(i, 1);
+      }
+    });
+    renderUsers();
+  }
 };
 // eventListners
 const addEventListeners = () => {
@@ -86,12 +92,16 @@ const addEventListeners = () => {
     editBtn.addEventListener('click', editData);
   });
   addUserBtn.addEventListener('click', () => {
-    modalForm.reset;
+    modalHeadertext.innerText = 'Add User';
+    userPhone.value = '';
+    userEmail.value = '';
+    userName.value = '';
     modalForm.onsubmit = (e) => {
       e.preventDefault();
       modalForm.reset;
       addUser();
       renderUsers();
+      closeBtn.click();
     };
   });
 };

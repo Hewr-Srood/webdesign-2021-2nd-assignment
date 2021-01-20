@@ -121,27 +121,43 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Edit Contact</h5>
+            <h5 id="modal-header-text" class="modal-title">Edit Contact</h5>
             <button
               type="button"
+              id="x-btn-close"
               class="btn-close"
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
           </div>
-          <form id="modal-form">
+          <form id="modal-form" action="">
             <div class="modal-body">
               <div class="form-group mb-2">
                 <label for="">Contact Name</label>
-                <input id="user-name" type="text" class="form-control" />
+                <input
+                  id="user-name"
+                  type="text"
+                  class="form-control"
+                  required
+                />
               </div>
               <div class="form-group mb-2">
                 <label for="">Phone no.</label>
-                <input id="user-phone" type="tel" class="form-control" />
+                <input
+                  id="user-phone"
+                  type="tel"
+                  class="form-control"
+                  required
+                />
               </div>
               <div class="form-group">
                 <label for="">Emial</label>
-                <input id="user-email" type="email" class="form-control" />
+                <input
+                  id="user-email"
+                  type="email"
+                  class="form-control"
+                  required
+                />
               </div>
             </div>
             <div class="modal-footer">
