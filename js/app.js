@@ -1,21 +1,21 @@
 // Elemets
-const tableBody = document.getElementById('table-body');
-const userName = document.getElementById('user-name');
-const userPhone = document.getElementById('user-phone');
-const userEmail = document.getElementById('user-email');
-const modalForm = document.getElementById('modal-form');
-const saveBtn = document.getElementById('save-modal');
-const addUserBtn = document.getElementById('add-contact-btn');
-const modalHeadertext = document.getElementById('modal-header-text');
-const closeBtn = document.getElementById('x-btn-close');
+const tableBody = document.getElementById("table-body");
+const userName = document.getElementById("user-name");
+const userPhone = document.getElementById("user-phone");
+const userEmail = document.getElementById("user-email");
+const modalForm = document.getElementById("modal-form");
+const saveBtn = document.getElementById("save-modal");
+const addUserBtn = document.getElementById("add-contact-btn");
+const modalHeadertext = document.getElementById("modal-header-text");
+const closeBtn = document.getElementById("x-btn-close");
 let editBtns, deleteBtns;
 
 // users
-let users = JSON.parse(localStorage.getItem('users')) || [
-  { name: 'hewr', phone: '07504454545', email: 'hewr@email.com' },
-  { name: 'ali', phone: '07504444444', email: 'ali@email.com' },
-  { name: 'ahmad', phone: '07504464646', email: 'ahmad@email.com' },
-  { name: 'ayman', phone: '07504434343', email: 'ayman@email.com' },
+let users = JSON.parse(localStorage.getItem("users")) || [
+  { name: "hewr", phone: "07504454545", email: "hewr@email.com" },
+  { name: "ali", phone: "07504444444", email: "ali@email.com" },
+  { name: "ahmad", phone: "07504464646", email: "ahmad@email.com" },
+  { name: "ayman", phone: "07504434343", email: "ayman@email.com" },
 ];
 const createRow = (id, name, phone, email) => {
   let newRow = `
@@ -53,10 +53,14 @@ const addUser = () => {
 // edit data
 const editData = (e) => {
   let rowData = e.target.parentElement.parentElement.children;
+  if (!rowData.innerText) {
+    rowData = e.target.parentElement.parentElement.parentElement.children;
+  }
   let name = rowData[1].innerText;
   let phone = rowData[2].innerText;
   let email = rowData[3].innerText;
   updateModal(name, phone, email);
+
   users.map((user) => {
     if (user.name == name) {
       modalForm.onsubmit = (e) => {
@@ -71,10 +75,10 @@ const editData = (e) => {
   });
 };
 const deleteData = (e) => {
-  const wantsToPlayAgain = confirm('are you sure?');
+  const wantsToPlayAgain = confirm("are you sure?");
   if (wantsToPlayAgain) {
-    let name = e.target.closest('tr').children[1].innerText;
-    let email = e.target.closest('tr').children[3].innerText;
+    let name = e.target.closest("tr").children[1].innerText;
+    let email = e.target.closest("tr").children[3].innerText;
     users.map((user, i) => {
       if (user.email == email && user.name == name) {
         users.splice(i, 1);
@@ -86,16 +90,16 @@ const deleteData = (e) => {
 // eventListners
 const addEventListeners = () => {
   deleteBtns.forEach((deleteBtn) => {
-    deleteBtn.addEventListener('click', deleteData);
+    deleteBtn.addEventListener("click", deleteData);
   });
   editBtns.forEach((editBtn) => {
-    editBtn.addEventListener('click', editData);
+    editBtn.addEventListener("click", editData);
   });
-  addUserBtn.addEventListener('click', () => {
-    modalHeadertext.innerText = 'Add User';
-    userPhone.value = '';
-    userEmail.value = '';
-    userName.value = '';
+  addUserBtn.addEventListener("click", () => {
+    modalHeadertext.innerText = "Add User";
+    userPhone.value = "";
+    userEmail.value = "";
+    userName.value = "";
     modalForm.onsubmit = (e) => {
       e.preventDefault();
       modalForm.reset;
@@ -108,26 +112,26 @@ const addEventListeners = () => {
 
 //update the selectors and localstorage
 const update = () => {
-  editBtns = document.querySelectorAll('.edit-btn');
-  deleteBtns = document.querySelectorAll('.delete-btn');
+  editBtns = document.querySelectorAll(".edit-btn");
+  deleteBtns = document.querySelectorAll(".delete-btn");
   addEventListeners();
-  localStorage.setItem('users', JSON.stringify(users));
+  localStorage.setItem("users", JSON.stringify(users));
 };
 
 // render the users
 const renderUsers = () => {
-  tableBody.innerHTML = '';
+  tableBody.innerHTML = "";
   users.map((user, i) => {
     tableBody.insertAdjacentHTML(
-      'beforeend',
-      createRow(i + 1, user.name, user.phone, user.email),
+      "beforeend",
+      createRow(i + 1, user.name, user.phone, user.email)
     );
   });
   update();
 };
 
 // load data from local storage or default data
-window.addEventListener('DOMContentLoaded', renderUsers());
+window.addEventListener("DOMContentLoaded", renderUsers());
 // update modal
 const updateModal = (name, phone, email) => {
   modalForm.reset;
